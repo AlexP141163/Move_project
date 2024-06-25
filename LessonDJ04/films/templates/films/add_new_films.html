@@ -1,0 +1,38 @@
+{% extends 'films/layoute.html' %}  <!-- Убедитесь в правильности имени layout файла -->
+
+{% block title %}
+    <title>Страница для добавления фильмов</title>
+{% endblock %}
+
+{% block content %}
+<h1>Страница для добавления фильмов</h1>
+{{form}}
+<div>
+    <form method="post" class="p-3">
+        {% csrf_token %}
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Заголовок фильма">
+    </div>
+    <div class="mb-3">
+        <textarea class="form-control" placeholder="Описание фильма" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <textarea class="form-control" placeholder="Отзыв о фильме" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Автор">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Дата публикации</label>
+        <input type="date" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Время публикации</label>
+        <input type="time" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить фильм</button>
+</form>
+</div>
+
+
+{% endblock %}

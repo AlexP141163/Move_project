@@ -1,0 +1,29 @@
+{% extends 'films/layoute.html' %}  <!-- Убедитесь в правильности имени layout файла -->
+
+{% block title %}
+    <title>Фильмография</title>
+{% endblock %}
+
+{% block content %}
+<h1>Фильмография</h1>
+    {% if films %}
+        {% for new in news %}
+            <div class="card">
+                <div class="card" style="width: 18rem;">
+                  <img src="Фильм.jpeg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                            <h5 class="card-title">{{new.title}}</h5>
+                            <p class="card-text">{{new.description_film}}</p>
+                            <p>class="card-text">{{feedback_film}}</p>
+                            <p>Автор:{{new.author}}</p>
+                            <p>Дата публикации: {{new.pub_date|date:"Y-m-d H:i"}}</p>
+                            <a href="#" class="btn btn-primary">Подробнее</a>
+                      </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h4>Записей о новом фильме еще нет</h4>
+    {% endif %}
+
+{% endblock %}

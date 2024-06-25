@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'films/css/style.css' %}">
+    {% block title %}
+    {% endblock %}
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-3 bg-light">
+                <img src="{% static 'films/img/Фильм.jpeg' %}" alt="Фильм" class="img-fluid rounded">
+                <span class="d-block p-3">Обзор интересных фильмов</span>
+                {% include 'films/nav.html' %}
+            </aside>
+            <main class="col-md-9">
+                {% block content %}
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+    {% include 'films/footer.html' %}
+</body>
+</html>
