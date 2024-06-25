@@ -9,6 +9,7 @@ class New_film(models.Model):
     feedback_film = models.TextField('Отзыв о фильме')
     pub_date = models.DateTimeField('Дата публикации')
     author = models.CharField('Автор', max_length=100)
+    image = models.ImageField('Изображение', upload_to='films/img/')
 
     def __str__(self):
         # Возвращает строку с названием статьи, автором, датой публикации и началом текста статьи

@@ -1,9 +1,21 @@
 {% extends 'films/layoute.html' %}
 
+{% load static %}  <!-- Добавьте эту строку в начале файла, если её там ещё нет -->
+
 {% block title %}
-    <title>Первая страница на django</title>
+<title>Новостной сайт о лучших фильмах</title>
 {% endblock %}
 
 {% block content %}
-    <h1>Урок номер 2 по изучению фреймворка на Django"</h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Лучшие фильмы по Вашим отзывам!</h1>
+    <div class="text-center">
+        <img src="{% static 'films/img/Заставка.jpeg' %}" alt="Заставка кино" style="width: 1100px; height: auto;">
+    </div>
+    <div class="mt-4">
+        <p class="lead text-center">
+            Добро пожаловать на наш новостной сайт, посвященный лучшим фильмам! Здесь вы найдете последние новости из мира кино, рецензии на фильмы и эксклюзивные интервью.
+        </p>
+    </div>
+</div>
 {% endblock %}

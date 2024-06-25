@@ -5,8 +5,8 @@
 {% block content %}
 <h1>Фильмография</h1>
     {% if films %}
-        {% for new in films %}
-            <div class="card" style="width: 40rem;">
+        {% for films in films %}
+            <div class="card" style="width: 30rem;">
                 <img src="{{ new.image.url }}" class="card-img-top" alt="{{ new.title }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ new.title }}</h5>
@@ -21,4 +21,5 @@
     {% else %}
         <h4>Записей о новом фильме еще нет</h4>
     {% endif %}
+
 {% endblock %}

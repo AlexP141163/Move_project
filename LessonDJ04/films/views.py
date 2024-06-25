@@ -13,11 +13,12 @@ def movies(request):
 def create_films(request):
     error = ""
     if request.method == 'POST':
-        form = New_FilmForm(request.POST)
+        form = New_FilmForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('films')
         else:
             error = "Данные были введены некорректно"
-    form = New_FilmForm()
+    else:
+        form = New_FilmForm()
     return render(request, 'films/add_new_films.html', {'form':form})
